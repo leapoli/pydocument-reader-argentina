@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 from enum import Enum
-from re import search, match
+from re import search, match, sub
 
 
 class TipoDocumento(Enum):
@@ -286,6 +286,8 @@ class Document(object):
 
 
     def __init__(self, input_string):
+        # Es necesario reemplazar los espacios múltiples por espacios simples
+        input_string = sub('\s+',' ', input_string)
         self.teclado = None
         self.tipo_documento = None
         self.muestra = input_string.strip()
