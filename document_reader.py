@@ -147,10 +147,17 @@ class Document(object):
         00342157442@HERRMANN@LUCAS EMILIO@M@35296844@A@16/09/1990@06/02/2015
 
     Existen casos donde se encuentran datos al final de la fecha de emisión. Los mismos son desestimados.
+
+    Existen casos donde hay un error en la vocal acentuada, y en su lugar hay un caracter incorrecto. Los casos son:
+
+        · Caso {
+        
+            00694683548@ARANDA@BRISA BEL{EN GABRIELA@F@41910327@D@21/06/1999@30/09/2022@271
+
     """
     dni_gen_tres_us = "".join(("[0-9]{1,}\"",
-                               "[A-Za-zÁÉÍÓÚÜñáéíóúüÑ\']{1,}([\s][A-Za-zÁÉÍÓÚÜñáéíóúüÑ\']{1,}){0,}\"",
-                               "[A-Za-zÁÉÍÓÚÜñáéíóúüÑ\']{1,}([\s][A-Za-zÁÉÍÓÚÜñáéíóúüÑ\']{1,}){0,}\"",
+                               "[A-Za-zÁÉÍÓÚÜñáéíóúüÑ{\']{1,}([\s][A-Za-zÁÉÍÓÚÜñáéíóúüÑ{\']{1,}){0,}\"",
+                               "[A-Za-zÁÉÍÓÚÜñáéíóúüÑ{\']{1,}([\s][A-Za-zÁÉÍÓÚÜñáéíóúüÑ{\']{1,}){0,}\"",
                                "[A-Z]{1}\"",
                                "[0-9]{7,9}\"",
                                "[A-Z]{1}\"",
@@ -158,8 +165,8 @@ class Document(object):
                                "[0-9]{2}[-][0-9]{2}[-][0-9]{4}"))
 
     dni_gen_tres_es = "".join(("[0-9]{1,}@",
-                               "[A-Za-zÁÉÍÓÚÜñáéíóúüÑ\']{1,}([\s][A-Za-zÁÉÍÓÚÜñáéíóúüÑ\']{1,}){0,}@",
-                               "[A-Za-zÁÉÍÓÚÜñáéíóúüÑ\']{1,}([\s][A-Za-zÁÉÍÓÚÜñáéíóúüÑ\']{1,}){0,}@",
+                               "[A-Za-zÁÉÍÓÚÜñáéíóúüÑ{\']{1,}([\s][A-Za-zÁÉÍÓÚÜñáéíóúüÑ{\']{1,}){0,}@",
+                               "[A-Za-zÁÉÍÓÚÜñáéíóúüÑ{\']{1,}([\s][A-Za-zÁÉÍÓÚÜñáéíóúüÑ{\']{1,}){0,}@",
                                "[A-Z]{1}@",
                                "[0-9]{7,9}@",
                                "[A-Z]{1}@",
